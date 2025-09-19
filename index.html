@@ -671,13 +671,14 @@
   <div class="container is-max-desktop">
     <div class="has-text-centered">
       <div class="video-container">
-        <iframe 
-          src="https://www.youtube.com/embed/L6sNBcffjeU" 
-          title="ControlTac Introduction Video"
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          allowfullscreen>
-        </iframe>
+        <video 
+          src="./static/images/video.mp4" 
+          controls 
+          preload="metadata"
+          class="video-player"
+        >
+          Your browser does not support HTML5 video playback.
+        </video>
       </div>
       <div class="video-description">
         <strong>Introduction Video:</strong> This video provides an overview of our ControlTac method, demonstrating its capabilities in controllable tactile data generation for robotic applications.
@@ -685,6 +686,8 @@
     </div>
   </div>
 </section>
+
+
 
 <!-- Teaser Section -->
 <section class="teaser-section fade-in">
