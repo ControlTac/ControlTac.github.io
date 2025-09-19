@@ -17,26 +17,26 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
   
+  <link rel="icon" type="image/svg+xml" href="./static/images/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="./static/images/favicon.ico">
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
   <style>
     :root {
-      --primary-color: #6366f1;
-      --accent-color: #8b5cf6;
-      --secondary-color: #06b6d4;
-      --light-purple: #f3f4f6;
-      --dark-purple: #4338ca;
+      --primary-blue: #2563eb;
+      --accent-blue: #3b82f6;
+      --light-blue: #dbeafe;
+      --dark-blue: #1e40af;
       --gradient-start: #667eea;
       --gradient-end: #764ba2;
       --text-primary: #1f2937;
       --text-secondary: #6b7280;
       --border-color: #e5e7eb;
-      --shadow-soft: 0 10px 25px rgba(99, 102, 241, 0.1);
-      --shadow-medium: 0 20px 40px rgba(99, 102, 241, 0.15);
-      --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --card-bg: rgba(255, 255, 255, 0.95);
+      --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     }
 
     * {
@@ -48,19 +48,17 @@
       line-height: 1.6;
       color: var(--text-primary);
       background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-      min-height: 100vh;
     }
 
-    /* Enhanced navbar with glassmorphism */
+    /* Enhanced navbar with modern styling */
     .navbar {
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+      border-bottom: 1px solid var(--border-color);
       position: sticky;
       top: 0;
       z-index: 1000;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 20px rgba(99, 102, 241, 0.1);
     }
 
     .navbar-brand {
@@ -70,17 +68,14 @@
     .navbar-item {
       font-weight: 500;
       transition: all 0.3s ease;
-      color: var(--text-primary);
     }
 
     .navbar-item:hover {
-      background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-      color: white;
-      border-radius: 8px;
-      transform: translateY(-1px);
+      background: var(--light-blue);
+      color: var(--primary-blue);
     }
 
-    /* Hero section with modern gradient */
+    /* Hero section with GIF background */
     .hero-section {
       position: relative;
       color: white;
@@ -128,14 +123,10 @@
 
     .publication-title {
       font-weight: 700;
-      font-size: 3rem;
+      font-size: 2.5rem;
       line-height: 1.2;
       margin-bottom: 2rem;
-      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      background: linear-gradient(45deg, #ffffff, #e0e7ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
 
     .name {
@@ -146,61 +137,57 @@
       font-weight: 800;
       text-shadow: none;
       font-variant: small-caps;
-      text-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+    }
+
+    .author-block a {
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .author-block a:hover {
+      color: white;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
     }
 
     .publication-authors {
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
     }
 
-    /* Video section with glassmorphism */
+    /* Video section with enhanced styling - narrower */
     .video-hero {
-      background: var(--card-bg);
-      backdrop-filter: blur(20px);
-      padding: 4rem 0;
+      background: white;
+      padding: 3rem 0;
       position: relative;
-      border-top: 1px solid rgba(99, 102, 241, 0.1);
-      border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+    }
+
+    .video-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-color), transparent);
     }
 
     .video-container {
       position: relative;
       width: 100%;
-      max-width: 700px;
+      max-width: 600px;
       margin: 0 auto;
       background: #000;
-      border-radius: 20px;
+      border-radius: 16px;
       overflow: hidden;
       box-shadow: var(--shadow-medium);
       aspect-ratio: 16 / 9;
-      transition: all 0.3s ease;
-      border: 2px solid transparent;
-      background-clip: padding-box;
-    }
-
-    .video-container::before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      background: linear-gradient(45deg, var(--primary-color), var(--accent-color), var(--secondary-color));
-      border-radius: 22px;
-      z-index: -1;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .video-container:hover::before {
-      opacity: 1;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .video-container:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 30px 60px rgba(99, 102, 241, 0.25);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     }
 
     .video-container iframe {
@@ -210,125 +197,94 @@
       width: 100%;
       height: 100%;
       border: none;
-      border-radius: 18px;
+      border-radius: 16px;
     }
 
     .video-description {
-      max-width: 700px; 
-      margin: 3rem auto 0;
-      padding: 2rem;
+      max-width: 600px; 
+      margin: 2rem auto 0;
+      padding: 0 1rem;
       text-align: center;
-      background: var(--card-bg);
-      backdrop-filter: blur(20px);
-      border-radius: 16px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(99, 102, 241, 0.1);
       color: var(--text-secondary);
       font-size: 1.1rem;
-      line-height: 1.8;
+      line-height: 1.7;
     }
 
-    /* Teaser section with enhanced cards */
+    /* Teaser section with enhanced visual flow - narrower */
     .teaser-section {
       background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
-      padding: 5rem 0;
+      padding: 4rem 0;
       position: relative;
+    }
+
+    .teaser-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-color), transparent);
     }
 
     .teaser-content {
       display: flex;
       flex-direction: column;
-      gap: 3rem;
+      gap: 2rem;
       align-items: center;
-      max-width: 800px; 
+      max-width: 700px; 
       margin: 0 auto;
       padding: 0 2rem;
     }
 
     .teaser-image {
       width: 100%;
-      max-width: 800px; 
-      border-radius: 24px;
+      max-width: 700px; 
+      border-radius: 20px;
       box-shadow: var(--shadow-medium);
-      transition: all 0.3s ease;
+      transition: transform 0.3s ease;
       display: block;
       margin: 0 auto;
-      border: 3px solid transparent;
-      background-clip: padding-box;
     }
 
     .teaser-image:hover {
-      transform: scale(1.03) rotate(1deg);
-      box-shadow: 0 30px 60px rgba(99, 102, 241, 0.2);
+      transform: scale(1.02);
     }
 
     .teaser-description {
-      background: var(--card-bg);
-      backdrop-filter: blur(20px);
-      padding: 2.5rem;
-      border-radius: 20px;
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
       box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(99, 102, 241, 0.1);
-      max-width: 750px; 
+      border: 1px solid var(--border-color);
+      max-width: 650px; 
       text-align: left;
-      position: relative;
-      overflow: hidden;
     }
 
-    .teaser-description::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--secondary-color));
-      border-radius: 20px 20px 0 0;
-    }
-
-    /* Enhanced buttons */
+    /* Button enhancements */
     .publication-links {
       display: flex;
-      gap: 1.5rem;
+      gap: 1rem;
       justify-content: center;
       flex-wrap: wrap;
-      margin-top: 2.5rem;
+      margin-top: 2rem;
     }
 
     .button.is-rounded {
-      background: rgba(255, 255, 255, 0.15);
-      border: 2px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.3);
       color: white;
-      font-weight: 600;
+      font-weight: 500;
       transition: all 0.3s ease;
-      backdrop-filter: blur(15px);
+      backdrop-filter: blur(10px);
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .button.is-rounded::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-      transition: left 0.5s ease;
-    }
-
-    .button.is-rounded:hover::before {
-      left: 100%;
     }
 
     .button.is-rounded:hover {
-      background: rgba(255, 255, 255, 0.25);
-      border-color: rgba(255, 255, 255, 0.4);
-      transform: translateY(-3px);
-      box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.3);
+      border-color: rgba(255, 255, 255, 0.5);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
     }
 
     .button:disabled {
@@ -336,202 +292,39 @@
       cursor: not-allowed;
     }
 
-    /* Enhanced content sections */
+    /* Section styling improvements */
     .content-section {
-      background: var(--card-bg);
-      backdrop-filter: blur(20px);
-      margin: 3rem 0;
-      border-radius: 24px;
+      background: white;
+      margin: 2rem 0;
+      border-radius: 16px;
       box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(99, 102, 241, 0.1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .content-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--secondary-color));
-      border-radius: 24px 24px 0 0;
+      border: 1px solid var(--border-color);
     }
 
     .section-title {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 700;
       color: var(--text-primary);
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       position: relative;
-      background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
     }
 
     .section-title::after {
       content: '';
       position: absolute;
-      bottom: -12px;
+      bottom: -8px;
       left: 50%;
       transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
       border-radius: 2px;
     }
 
-    /* Content sections styling */
-    .abstract-section, .method-section, .visualization-section, .downstream-section {
-      background: var(--card-bg);
-      backdrop-filter: blur(20px);
-      padding: 4rem 0;
-      position: relative;
-      border-top: 1px solid rgba(99, 102, 241, 0.1);
-      border-bottom: 1px solid rgba(99, 102, 241, 0.1);
-    }
-
-    .content-wrapper {
-      max-width: 900px; 
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    /* Typography improvements */
-    .content p {
-      font-size: 1.1rem;
-      line-height: 1.9;
-      color: var(--text-primary);
-      margin-bottom: 2rem;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .subtitle.is-5 {
-      color: var(--primary-color);
-      font-weight: 600;
-      margin-top: 3rem;
-      margin-bottom: 1rem;
-      font-size: 1.4rem;
-    }
-
-    /* Enhanced image containers */
-    .gif-container, .image-container {
-      text-align: center;
-      margin: 3rem auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      max-width: 700px; 
-    }
-
-    .gif-container img, .image-container img {
-      border-radius: 16px;
-      box-shadow: var(--shadow-soft);
-      transition: all 0.3s ease;
-      max-width: 100%;
-      height: auto;
-      display: block;
-      border: 2px solid transparent;
-      background-clip: padding-box;
-    }
-
-    .gif-container img:hover, .image-container img:hover {
-      transform: scale(1.05);
-      box-shadow: var(--shadow-medium);
-    }
-
-    /* BibTeX section */
-    #BibTeX {
-      background: var(--card-bg);
-      backdrop-filter: blur(20px);
-      border-radius: 20px;
-      margin: 3rem auto;
-      padding: 2.5rem;
-      max-width: 800px;
-      text-align: left;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(99, 102, 241, 0.1);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    #BibTeX::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--secondary-color));
-      border-radius: 20px 20px 0 0;
-    }
-    
-    #BibTeX h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    
-    #BibTeX pre {
-      background: linear-gradient(135deg, #f8fafc, #f1f5f9);
-      border: 1px solid rgba(99, 102, 241, 0.2);
-      border-radius: 12px;
-      padding: 1.5rem;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.85rem;
-      overflow-x: auto;
-      white-space: pre; 
-      line-height: 1.6;
-      color: #1e293b;
-      box-shadow: inset 0 2px 4px rgba(99, 102, 241, 0.1);
-    }
-
-    /* Footer styling */
-    .footer {
-      background: linear-gradient(135deg, var(--text-primary), #374151);
-      color: white;
-      padding: 4rem 0 3rem;
-      margin-top: 5rem;
-      position: relative;
-    }
-
-    .footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--secondary-color));
-    }
-
-    /* Center all images by default with size constraints */
-    img {
-      display: block;
-      margin: 0 auto;
-      max-width: 700px; 
-      height: auto;
-    }
-
-    .narrow-content {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-
-    .extra-narrow-content {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-
-    /* Responsive design improvements */
+    /* Enhanced responsive design */
     @media screen and (max-width: 768px) {
       .hero-section {
-        padding: 3rem 0 2rem;
+        padding: 2rem 0 1.5rem;
         min-height: 70vh;
       }
 
@@ -540,29 +333,28 @@
       }
 
       .publication-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
         margin-bottom: 1.5rem;
       }
 
       .video-hero {
-        padding: 3rem 0;
+        padding: 2rem 0;
       }
 
       .video-container {
         margin: 0 1rem;
-        border-radius: 16px;
+        border-radius: 12px;
         max-width: calc(100% - 2rem);
       }
 
       .video-description {
         font-size: 1rem;
-        margin-top: 2rem;
+        margin-top: 1.5rem;
         max-width: calc(100% - 2rem);
-        padding: 1.5rem;
       }
 
       .teaser-section {
-        padding: 3rem 0;
+        padding: 2rem 0;
       }
 
       .teaser-content {
@@ -572,42 +364,72 @@
 
       .teaser-description {
         margin: 0 0;
-        padding: 2rem;
+        padding: 1.5rem;
         max-width: 100%;
       }
 
       .publication-links {
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
+        gap: 0.75rem;
       }
 
       .button.is-rounded {
-        width: 250px;
+        width: 200px;
       }
 
       .section-title {
-        font-size: 2rem;
+        font-size: 1.5rem;
       }
 
       .content-wrapper {
         padding: 0 1.5rem;
       }
+    }
 
-      img {
-        max-width: 100%;
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
+      .teaser-content {
+        max-width: 600px;
       }
+      
+      .teaser-image {
+        max-width: 600px;
+      }
+      
+      .video-container {
+        max-width: 500px;
+      }
+      
+      .video-description {
+        max-width: 500px;
+      }
+    }
+
+    @media screen and (min-width: 1025px) {
+      .teaser-content {
+        max-width: 700px;
+      }
+    }
+
+    /* Enhanced image responsiveness and centering - narrower containers */
+    .responsive-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      margin: 0 auto;
+      max-width: 600px; 
     }
 
     /* Smooth animations */
     .fade-in {
-      animation: fadeIn 1s ease-out;
+      animation: fadeIn 0.8s ease-out;
     }
 
     @keyframes fadeIn {
       from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
       }
       to {
         opacity: 1;
@@ -615,20 +437,142 @@
       }
     }
 
-    /* Loading animation for placeholder elements */
-    .loading-placeholder {
-      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-      background-size: 200% 100%;
-      animation: loading 2s infinite;
+    /* Content sections styling - narrower content */
+    .abstract-section, .method-section, .visualization-section, .downstream-section {
+      background: white;
+      padding: 3rem 0;
+      position: relative;
     }
 
-    @keyframes loading {
-      0% {
-        background-position: 200% 0;
-      }
-      100% {
-        background-position: -200% 0;
-      }
+    .abstract-section::before, .method-section::before, .visualization-section::before, .downstream-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+    }
+
+    .content-wrapper {
+      max-width: 800px; 
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Typography improvements */
+    .content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .subtitle.is-5 {
+      color: var(--primary-blue);
+      font-weight: 600;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Enhanced GIF and image containers - narrower and centered */
+    .gif-container, .image-container {
+      text-align: center;
+      margin: 2rem auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 600px; 
+    }
+
+    .gif-container img, .image-container img {
+      border-radius: 12px;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.3s ease;
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .gif-container img:hover, .image-container img:hover {
+      transform: scale(1.02);
+    }
+
+  
+    #BibTeX {
+      background: #f8fafc;
+      border-radius: 16px;
+      margin: 2rem auto;
+      padding: 2rem;
+      max-width: 700px;
+      text-align: left;
+    }
+    
+    #BibTeX h2 {
+      text-align: center;
+    }
+    
+    #BibTeX pre {
+      background: white;
+      border: 1px solid var(--border-color, #e2e8f0);
+      border-radius: 8px;
+      padding: 1.2rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      overflow-x: auto;
+      white-space: pre; 
+      line-height: 1.6;
+      color: #1e293b;
+    }
+
+
+
+    /* Footer styling */
+    .footer {
+      background: var(--text-primary);
+      color: white;
+      padding: 3rem 0 2rem;
+      margin-top: 4rem;
+    }
+    
+    .footer a {
+      color: rgba(255, 255, 255, 0.8);
+      transition: color 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .footer a:hover {
+      color: white;
+    }
+    
+    .icon-link {
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+    }
+
+
+    /* Center all images by default with size constraints */
+    img {
+      display: block;
+      margin: 0 auto;
+      max-width: 600px; 
+      height: auto;
+    }
+
+
+    .narrow-content {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .extra-narrow-content {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 0 1rem;
     }
   </style>
 </head>
@@ -636,7 +580,7 @@
 
 
 
-<!-- Hero Section -->
+<!-- Hero Section with GIF Background -->
 <section class="hero-section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
@@ -645,28 +589,15 @@
           <span class="name">ControlTac</span>: Force- and Position-Controlled Tactile Data Augmentation with a Single Reference Image
         </h1>
 
-        <div class="is-size-5 publication-authors fade-in">
+        <div class="is-size-5 publication-authors">
           <span class="author-block">Submission Number: 13062</span>
-        </div>
-
-        
-
-        
-          <span class="link-block">
-            <div class="button is-normal is-rounded" style="cursor: default;">
-              <span class="icon">
-                <i class="fab fa-github"></i>
-              </span>
-              <span>Code (Available Upon Acceptance)</span>
-            </div>
-          </span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Video Section -->
+<!-- Video Section - Now at the top -->
 <section class="video-hero fade-in">
   <div class="container is-max-desktop">
     <div class="has-text-centered">
@@ -679,9 +610,6 @@
           allowfullscreen>
         </iframe>
       </div>
-      <div class="video-description">
-        <strong>Introduction Video:</strong> This video provides an overview of our ControlTac method, demonstrating its capabilities in controllable tactile data generation for robotic applications.
-      </div>
     </div>
   </div>
 </section>
@@ -693,7 +621,7 @@
       <img src="./static/images/teaser.png" alt="ControlTac Teaser" class="teaser-image responsive-image" />
       <div class="teaser-description">
         <p>
-          <strong>At a Glance:</strong> Starting from a single reference image, <span class="name" style="color: var(--primary-color);">ControlTac</span> generates thousands of 
+          <strong>At a Glance:</strong> Starting from a single reference image, <span class="name" style="color: var(--primary-blue);">ControlTac</span> generates thousands of 
           augmented tactile images with controllable contact forces and positions <em>(Left)</em>. 
           These generated images prove highly effective for downstream tasks <em>(Middle)</em> and demonstrate practical utility 
           in real-world robotic experiments <em>(Right)</em>.
@@ -719,12 +647,12 @@
             to downstream tasks.
           </p>
           <p>
-            To address this, we propose <span class="name" style="color: var(--primary-color);">ControlTac</span>, a 
+            To address this, we propose <span class="name" style="color: var(--primary-blue);">ControlTac</span>, a 
             two-stage controllable framework that generates realistic tactile images conditioned on a 
             single reference tactile image, contact force, and contact position. With those physical 
-            priors as control input, <span class="name" style="color: var(--primary-color);">ControlTac</span> generates physically plausible 
+            priors as control input, <span class="name" style="color: var(--primary-blue);">ControlTac</span> generates physically plausible 
             and varied tactile images that can be used for effective data augmentation. 
-            Through experiments on three downstream tasks, we demonstrate that <span class="name" style="color: var(--primary-color);">ControlTac</span> 
+            Through experiments on three downstream tasks, we demonstrate that <span class="name" style="color: var(--primary-blue);">ControlTac</span> 
             can effectively augment tactile datasets and lead to consistent gains. 
             Our three real-world experiments further validate the practical utility of our approach.
           </p>
@@ -742,7 +670,7 @@
         <h2 class="section-title">Method Overview</h2>
         <div class="content has-text-justified">
           <p>
-            <span class="name" style="color: var(--primary-color);">ControlTac</span> consists of two key components:
+            <span class="name" style="color: var(--primary-blue);">ControlTac</span> consists of two key components:
             <strong>a. Force-Control:</strong> We input the background-removed tactile image <em>x</em> into the DiT model, conditioned on the 3D contact force <em>ΔF</em>, to generate force-specific tactile variations.
             <strong>b. Position-Control:</strong> We transfer the pretrained DiT from stage one and fine-tune it using ControlNet, conditioned on a contact mask <em>c</em>, to synthesize realistic tactile images <em>y<sub>B</sub></em> under different contact positions and forces.
           </p>
@@ -752,7 +680,7 @@
           <img src="./static/images/framework.png" alt="ControlTac Framework" class="responsive-image">
         </div>
         
-        <div class="content has-text-left" style="margin-top: 3rem;">
+        <div class="content has-text-left" style="margin-top: 2rem;">
           <p>Here, we demonstrate how to annotate the contact mask to represent the contact position.</p>
           <div class="gif-container">
             <img src="./static/images/mask.gif" alt="Contact Mask Annotation" class="responsive-image" style="max-width: 80%;">
@@ -773,7 +701,7 @@
         <h3 class="subtitle is-5">Qualitative Comparison</h3>
         <div class="content has-text-justified">
           <p>
-            We conduct a qualitative comparison between <span class="name" style="color: var(--primary-color);">ControlTac</span> and other generators and simulators. <span class="name" style="color: var(--primary-color);">ControlTac</span> exhibits superior realism, variation, and controllability in the generated tactile images.
+            We conduct a qualitative comparison between <span class="name" style="color: var(--primary-blue);">ControlTac</span> and other generators and simulators. <span class="name" style="color: var(--primary-blue);">ControlTac</span> exhibits superior realism, variation, and controllability in the generated tactile images.
           </p>
           <div class="image-container">
             <img src="./static/images/vis1.png" alt="Comparison with other methods" class="responsive-image">
@@ -785,7 +713,7 @@
           <p>
             The first column displays 3D previews of six objects, followed by the input tactile image (Ref. Image) 
             in the second column and the Contact Mask in the third column. The fourth column shows the initial force 
-            (top) and target force (bottom). Subsequent columns depict the Ground Truth (G.T.) and results from <span class="name" style="color: var(--primary-color);">ControlTac</span>, 
+            (top) and target force (bottom). Subsequent columns depict the Ground Truth (G.T.) and results from <span class="name" style="color: var(--primary-blue);">ControlTac</span>, 
             the hybrid force-position conditional diffusion model (Hybrid), and the separate-control pipeline (Separate). 
             In part A), we visualize the generated images for comparison; in part B), we visualize the 
             error maps highlighting the differences from the ground-truth tactile image.
@@ -798,7 +726,7 @@
         <h3 class="subtitle is-5">Force-Controlled and Position-Controlled Generation</h3>
         <div class="content has-text-justified">
           <p>
-            The figure below showcases the generation results of force-controlled and position-controlled components in <span class="name" style="color: var(--primary-color);">ControlTac</span>.
+            The figure below showcases the generation results of force-controlled and position-controlled components in <span class="name" style="color: var(--primary-blue);">ControlTac</span>.
           </p>
           <div class="gif-container">
             <img src="./static/images/vis3.gif" alt="Force and position control demonstration" class="responsive-image" style="max-width: 80%;">
@@ -808,7 +736,7 @@
         <h3 class="subtitle is-5">Diversity of Generated Tactile Images</h3>
         <div class="content has-text-justified">
           <p>
-            The figure below clearly demonstrates that <span class="name" style="color: var(--primary-color);">ControlTac</span> can generate a diverse range of tactile images from a single reference tactile image.
+            The figure below clearly demonstrates that <span class="name" style="color: var(--primary-blue);">ControlTac</span> can generate a diverse range of tactile images from a single reference tactile image.
           </p>
           <div class="gif-container">
             <img src="./static/images/vis4_new.gif" alt="Diversity demonstration" class="responsive-image">
@@ -829,7 +757,7 @@
         <h3 class="subtitle is-5">Force Estimation</h3>
         <div class="content has-text-justified">
           <p>
-            The left figure illustrates how the force-controlled component in <span class="name" style="color: var(--primary-color);">ControlTac</span> augments 
+            The left figure illustrates how the force-controlled component in <span class="name" style="color: var(--primary-blue);">ControlTac</span> augments 
             1,000 real samples with a larger set of generated tactile images, leading to a substantial reduction in MAE 
             compared to using real data alone. Notably, by incorporating the generated data, the model achieves comparable 
             performance to training on the full real dataset (20,000 images) using only 8,000 real samples. This demonstrates 
@@ -839,7 +767,7 @@
           </p>
           <p>
             Building on the force-controlled component, we further integrate the position-controlled component of 
-            <span class="name" style="color: var(--primary-color);">ControlTac</span>. To highlight the importance of diverse contact positions in 
+            <span class="name" style="color: var(--primary-blue);">ControlTac</span>. To highlight the importance of diverse contact positions in 
             training a robust force estimator, we divide the real dataset by contact angle, since tactile image 
             appearance varies across different contact angles. The right figure presents the MAE of force estimation 
             under different training conditions. The results show that incorporating position-controlled generation 
@@ -851,7 +779,7 @@
             <img src="./static/images/force1.png" alt="Force estimation results" class="responsive-image">
           </div>
           <p>
-            We further validate the effectiveness of <span class="name" style="color: var(--primary-color);">ControlTac</span> in real-world pushing 
+            We further validate the effectiveness of <span class="name" style="color: var(--primary-blue);">ControlTac</span> in real-world pushing 
             experiments. The force estimator trained only with generated tactile data achieves
             comparable performance to the one trained on real tactile data, demonstrating that the generated data is 
             realistic and reliable enough to be used directly for training in practical scenarios.
@@ -865,7 +793,7 @@
         <div class="content has-text-justified">
           <p>
             As shown in the table below, pose estimators trained on tactile images generated by 
-            <span class="name" style="color: var(--primary-color);">ControlTac</span> achieve strong performance across all objects, 
+            <span class="name" style="color: var(--primary-blue);">ControlTac</span> achieve strong performance across all objects, 
             including the unseen T Shape. In particular, using a larger amount of generated data 
             leads to better results than using real data alone, as it is sufficiently realistic 
             and covers a much wider range of contact positions and forces. We also compare the 
@@ -878,7 +806,7 @@
             <img src="./static/images/pos1.png" alt="Pose estimation comparison" class="responsive-image" style="max-width: 50%;">
           </div>
           <p>
-            To further evaluate the performance of the pose estimator trained with <span class="name" style="color: var(--primary-color);">ControlTac</span>-generated data, 
+            To further evaluate the performance of the pose estimator trained with <span class="name" style="color: var(--primary-blue);">ControlTac</span>-generated data, 
             we conducted a real-time pose tracking experiment. Our model successfully tracked poses at a 
             frequency of 10 Hz, highlighting its practicality in dynamic real-world scenarios.
           </p>
@@ -886,7 +814,7 @@
             <img src="./static/images/tracking.gif" alt="Real-time pose tracking" class="responsive-image">
           </div>
           <p>
-            In the Precise Insertion task, the pose estimator trained with <span class="name" style="color: var(--primary-color);">ControlTac</span>-generated 
+            In the Precise Insertion task, the pose estimator trained with <span class="name" style="color: var(--primary-blue);">ControlTac</span>-generated 
             data achieved success rates of 90% on the cylinder and 85% on the cross. Notably, 
             it also reached an 85% success rate on the unseen T-shape.
           </p>
@@ -898,10 +826,10 @@
         <h3 class="subtitle is-5">Object Classification</h3>
         <div class="content has-text-justified">
           <p>
-            In the object classification task, we found that compared to traditional augmentation methods, using <span class="name" style="color: var(--primary-color);">ControlTac</span> for data augmentation yields significantly better performance—whether with a simple CNN classifier, a ViT trained from scratch, or a ViT pretrained on ImageNet.
+            In the object classification task, we found that compared to traditional augmentation methods, using <span class="name" style="color: var(--primary-blue);">ControlTac</span> for data augmentation yields significantly better performance—whether with a simple CNN classifier, a ViT trained from scratch, or a ViT pretrained on ImageNet.
           </p>
           <p style="font-style: italic;">
-            Note: G = geometric augmentation; C = color augmentation; Gen = our <span class="name" style="color: var(--primary-color);">ControlTac</span>-based augmentation method.
+            Note: G = geometric augmentation; C = color augmentation; Gen = our <span class="name" style="color: var(--primary-blue);">ControlTac</span>-based augmentation method.
           </p>
           <div class="image-container">
             <img src="./static/images/classification.png" alt="Object classification results" class="responsive-image">
@@ -931,50 +859,6 @@
         el.classList.toggle('is-active');
         targetElement.classList.toggle('is-active');
       });
-    });
-
-    // Add smooth scrolling and fade-in animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in');
-        }
-      });
-    }, observerOptions);
-
-    // Observe all sections
-    document.querySelectorAll('section').forEach(section => {
-      observer.observe(section);
-    });
-
-    // Add parallax effect to hero section
-    window.addEventListener('scroll', () => {
-      const scrolled = window.pageYOffset;
-      const heroSection = document.querySelector('.hero-section');
-      if (heroSection) {
-        heroSection.style.transform = `translateY(${scrolled * 0.5}px)`;
-      }
-    });
-  });
-
-  // Add loading animation for images
-  document.addEventListener('DOMContentLoaded', () => {
-    const images = document.querySelectorAll('img');
-    images.forEach(img => {
-      img.addEventListener('load', () => {
-        img.style.opacity = '1';
-        img.style.transform = 'scale(1)';
-      });
-      
-      // Set initial styles
-      img.style.opacity = '0';
-      img.style.transform = 'scale(0.95)';
-      img.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     });
   });
 </script>
