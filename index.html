@@ -84,14 +84,15 @@
     .hero-section {
       position: relative;
       color: white;
-      padding: 4rem 0 3rem;
+      padding: 3rem 0 2rem;
       overflow: hidden;
-      min-height: 80vh;
+      min-height: 70vh;
       display: flex;
       align-items: center;
-      background: var(--bg-gradient);
-      background-size: 400% 400%;
-      animation: gradientShift 8s ease infinite;
+      background-image: url('./static/images/front.gif');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     @keyframes gradientShift {
@@ -640,25 +641,7 @@
 </head>
 <body>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <div class="navbar-item">
-        <span class="icon">
-          <i class="fas fa-home"></i>
-        </span>
-        <span>Submission Number: 13062</span>
-      </div>
-    </div>
-  </div>
-</nav>
+
 
 <!-- Hero Section -->
 <section class="hero-section">
@@ -670,7 +653,7 @@
         </h1>
 
         <div class="is-size-5 publication-authors fade-in">
-          <span class="author-block">Anonymous Authors</span>
+          <span class="author-block">Submission Number: 13062</span>
         </div>
 
         
@@ -936,38 +919,7 @@
   </div>
 </section>
 
-<!-- BibTeX Section -->
-<section class="section" id="BibTeX">
-  <div class="content-wrapper">
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
-        <h2 class="section-title has-text-centered">BibTeX</h2>
-        <pre><code>@article{anonymous2025controltac,
-  title={ControlTac: Force- and Position-Controlled Tactile Data Augmentation with a Single Reference Image},
-  author={Anonymous Authors},
-  journal={Anonymous Submission},
-  year={2025}
-}</code></pre>
-      </div>
-    </div>
-  </div>
-</section>
 
-<footer class="footer">
-  <div class="container has-text-centered">
-    <div class="content">
-      <p style="font-size: 1.2rem; margin-bottom: 1rem;">
-        <strong>Anonymous Submission</strong>
-      </p>
-      <p style="color: rgba(255, 255, 255, 0.8);">
-        This work represents an anonymous submission to a peer-reviewed venue.
-      </p>
-      <p style="margin-top: 2rem; font-style: italic; color: rgba(255, 255, 255, 0.7);">
-        Website template adapted for anonymous review purposes
-      </p>
-    </div>
-  </div>
-</footer>
 
 <script>
   // Navbar burger functionality for mobile
